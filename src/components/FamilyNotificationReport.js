@@ -84,7 +84,7 @@ class FamilyNotificationReport extends Component {
 
     handleTooltipOpen = () => {
         const { filters } = this.props
-        if (!('parentLocation' in filters)) {
+        if (!!filters && !('parentLocation' in filters)) {
             this.setState({toolTipOpen : true })
         }
     }
@@ -99,13 +99,14 @@ class FamilyNotificationReport extends Component {
 
     onMenuItemClick = (e) => {
         const { filters } = this.props
-        if (!!('parentLocation_2' in filters)) {
+        if (!!filters && !!('parentLocation_2' in filters)) {
             this.setState({modalOpen: true})
         }
         this.props.preview();
     }
 
     render() {
+        
         const { intl, filters, rights, classes, generating } = this.props;
         let valid_rights = !!rights.filter(r => r == RIGHT_FAMILY_POLICY_NOTIFICATION_REPORT).length
         if (valid_rights) {
@@ -122,7 +123,7 @@ class FamilyNotificationReport extends Component {
                             
                         <MenuItem 
                         key={`selectionsMenu-claim_ai-${classes.item}`} 
-                        disabled={!('parentLocation' in filters)}
+                        disabled={!!filters && !('parentLocation' in filters)}
                         onClick={e => this.onMenuItemClick(e)}
                         >
                             {formatMessage(intl, "policy_notification", "ReportModal")}
