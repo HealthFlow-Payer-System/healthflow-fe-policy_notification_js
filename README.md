@@ -1,2 +1,7 @@
-# openimis-fe-policy_notification_js
-FE contribution to Family form for Policies updates through SMS 
+# HealthFlow-fe-policy_notification_js
+
+> **HealthFlow Payer System — Egypt context**
+>
+> This repository is maintained under [HealthFlow Payer System](https://github.com/HealthFlow-Payer-System), an Egypt-focused health-insurance platform built on openIMIS foundations. Egypt-specific localization is applied at the assembly and module boundaries; consult the repository-specific configuration and deployment documentation for the capabilities enabled here.
+
+FE contribution to Family form for Policies updates through SMS
